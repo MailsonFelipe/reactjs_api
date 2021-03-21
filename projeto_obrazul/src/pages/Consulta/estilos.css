@@ -1,0 +1,53 @@
+.logo img{
+    margin-top: 3em;
+    max-width:300px;
+    max-height:250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+}
+
+.texto{
+    text-align: center;
+    color: darkblue;
+}
+
+.entrada, input{
+    margin-top: 2em; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 500px;
+    height: 20px;
+    border-color: darkblue;
+    font-size: larger;
+}
+
+.botao{
+    margin-top: 3em; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 500px;
+    height: 20px;
+    border-color: darkblue;
+    background-color: darkblue;
+    color:  #E1E1E6;
+    font-size: medium;
+}
+
+.botao:hover {
+    background-color: #121214;
+    color: #EFF2F5;
+    cursor: pointer;
+}
