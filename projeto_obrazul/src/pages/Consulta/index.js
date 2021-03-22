@@ -1,12 +1,12 @@
 import React from 'react';
 import './estilos.css';
+import {result} from '/workspace/reactjs_api/projeto_obrazul/src/App.js'
 
 function Consulta ()
 {
     return(
     <>
         <div className="logo">
-
              <img
                src="https://static.obrazul.com.br/static/img/obrazul-logo-bg.png"
                alt="Logo da Obrazul"
@@ -37,9 +37,10 @@ function Consulta ()
 var busca = '';
 function acionaBotao(){
     busca = document.getElementById("busca").value;
-    //alert(busca);
+    if(busca === ''){
+        alert("Digite algo");
+        console.log(result);
+    }
 }
-
-export const Busca = React.createContext(busca);
 
 export default Consulta;
