@@ -1,12 +1,26 @@
-import React from 'react'
-import Consulta from '../src/pages/Consulta'
+import React, { Component } from 'react';
+import api from './api';
+import Consulta from './pages/Consulta';
 
-function App() {
-  return (
-    <div className="App">
-        <Consulta/>
-    </div>
-  );
+class App extends Component
+{
+    state = {dados: []}
+    
+    async componentDidMount()
+    {
+        const resposta = await api.get('');
+        this.setState({filmes: resposta.data});
+        console.log(resposta.data);
+    }
+    
+
+    render() {
+    return (
+      <Consulta/>
+    );
+  };
 }
+
+
 
 export default App;
