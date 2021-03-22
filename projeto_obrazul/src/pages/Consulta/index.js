@@ -38,16 +38,30 @@ function Consulta ()
 var busca = '';
 function acionaBotao(){
     busca = document.getElementById("busca").value;
+    busca = busca.toLowerCase();
+    
     if(busca === ''){
         swal("Por favor, insira uma palavra!", "Tente novamente.");
-    }else{
-        swal(busca);
     }
 
     var obj = JSON.parse(JSON.stringify(result));
-    Object.keys(obj).forEach(function(key) {
-        console.log(key, obj[key]);
+    var flag = 0;
+
+    Object.keys(obj).forEach(function(key)
+    {
+          if((obj[key].fullname.toLowerCase()).includes(busca)) // lowecase para garantir que as strings serao iguais
+          {
+                console.log(obj[key]);
+                flag = 1;
+          }
     });
+
+    if (flag === 0)
+    {
+        swal("Ooops!", "Não encontramos o que procura!", "info");
+    }
+
+    //window.location.reload(true);
       
 }
 
