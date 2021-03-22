@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from './api';
 import Consulta from './pages/Consulta';
+//import {Busca} from './pages/Consulta/index';
 
 class App extends Component
 {
@@ -9,12 +10,14 @@ class App extends Component
     async componentDidMount()
     {
         const resposta = await api.get('');
-        this.setState({filmes: resposta.data});
-        console.log(resposta.data);
+        this.setState({dados: resposta.data});
+        console.log(resposta.data)
     }
+    
     
 
     render() {
+        
     return (
       <Consulta/>
     );

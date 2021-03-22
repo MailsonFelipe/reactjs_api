@@ -20,17 +20,26 @@ function Consulta ()
 
             <div className="entrada">
                <input
+                    id="busca"
                   type="text"
                   placeholder="Faça a sua busca"
                />
             </div>
 
-            <button type="submit" className="botao">
+            <button onClick={acionaBotao} type="submit" className="botao">
                Pesquisar
             </button>   
         </div>
     </>
     )
 }
+
+var busca = '';
+function acionaBotao(){
+    busca = document.getElementById("busca").value;
+    //alert(busca);
+}
+
+export const Busca = React.createContext(busca);
 
 export default Consulta;
