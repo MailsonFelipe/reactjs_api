@@ -40,8 +40,15 @@ function acionaBotao(){
     busca = document.getElementById("busca").value;
     if(busca === ''){
         swal("Por favor, insira uma palavra!", "Tente novamente.");
+    }else{
+        swal(busca);
     }
-    
+
+    var obj = JSON.parse(JSON.stringify(result));
+    Object.keys(obj).forEach(function(key) {
+        console.log(key, obj[key]);
+    });
+      
 }
 
 export default Consulta;
