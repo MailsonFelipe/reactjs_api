@@ -1,6 +1,7 @@
 import React from 'react';
 import './estilos.css';
 import {result} from '/workspace/reactjs_api/projeto_obrazul/src/App.js'
+import swal from 'sweetalert';
 
 function Consulta ()
 {
@@ -38,9 +39,9 @@ var busca = '';
 function acionaBotao(){
     busca = document.getElementById("busca").value;
     if(busca === ''){
-        alert("Digite algo");
-        console.log(result);
+        swal("Por favor, insira uma palavra!", "Tente novamente.");
     }
+    
 }
 
 export default Consulta;
