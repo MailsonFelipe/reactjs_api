@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from './api';
 import Consulta from './pages/Consulta';
-export var result = true;
+export var result = true; // variavel global a ser exportada para o modulo Consulta/index.js
 
 
 class App extends Component
@@ -10,18 +10,13 @@ class App extends Component
     
     async componentDidMount()
     {
-        const resposta = await api.get();
+        const resposta = await api.get(); // fazendo metodo get
         this.setState({dados: resposta.data});
     }
 
     render() {
         var {dados} = this.state;
-        result = dados.products;
-        //console.log(dados.products)
-
-        //const booleanos = Object.keys(dados).filter(dado => dados[dado] === "ARGAMASSA")
-        //console.log("Tem", booleanos);
-
+        result = dados.products; //copiando para 'result' a resposta da API
         return(
             <Consulta/>
         )

@@ -1,6 +1,6 @@
 import React from 'react';
 import './estilos.css';
-import {result} from '/workspace/reactjs_api/projeto_obrazul/src/App.js'
+import {result} from '/workspace/reactjs_api/projeto_obrazul/src/App.js' //importando objeto da API
 import swal from 'sweetalert';
 
 function Consulta ()
@@ -37,6 +37,7 @@ function Consulta ()
     )
 }
 
+// tratando a palavra buscada
 var busca = '';
 function acionaBotao(){
     busca = document.getElementById("busca").value;
@@ -54,8 +55,7 @@ function acionaBotao(){
     {
           if((obj[key].fullname.toLowerCase()).includes(busca) && busca !== '') // lowecase para garantir que as strings serao iguais
           {
-                string += "NOME: "+obj[key].fullname+" \n"+"IMAGEM: "+obj[key].picture+" \n"+
-                "PREÇO: R$ "+obj[key].price+" \n"+"LOJA: "+obj[key].store.name+" \n"+"TEL:"+obj[key].store.phone+" \n\n";
+                string += `NOME: ${obj[key].fullname}\nIMAGEM: ${obj[key].picture}\nPREÇO: R$ ${obj[key].price}\nLOJA: ${obj[key].store.name}\nTEL: ${obj[key].store.phone}\n\n`;
                 document.getElementById("res").innerHTML = string;
                 flag = 1;
           }
@@ -65,11 +65,8 @@ function acionaBotao(){
 
     if (flag === 0)
     {
-        swal("Ooops!", "Não encontramos o que procura!", "info");
-    }
-
-    //window.location.reload(true);
-      
+        swal("Ooops!", "Não encontramos o que procura!", "info"); // mensagem de produto nao encontrado
+    } 
 }
 
 export default Consulta;
