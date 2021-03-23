@@ -31,6 +31,8 @@ function Consulta ()
                Pesquisar
             </button>   
         </div>
+ 
+        <div className="resposta" id="res"></div>
     </>
     )
 }
@@ -46,12 +48,16 @@ function acionaBotao(){
 
     var obj = JSON.parse(JSON.stringify(result));
     var flag = 0;
+    var string = '';
 
     Object.keys(obj).forEach(function(key)
     {
-          if((obj[key].fullname.toLowerCase()).includes(busca)) // lowecase para garantir que as strings serao iguais
+          if((obj[key].fullname.toLowerCase()).includes(busca) && busca != '') // lowecase para garantir que as strings serao iguais
           {
                 console.log(obj[key]);
+                string += "NOME: "+obj[key].fullname+"\n"+"IMAGEM: "+obj[key].picture+"\n"+
+                "PREÇO: R$ "+obj[key].price+"\n"+"LOJA: "+obj[key].store.name+"\n"+"TEL:"+obj[key].store.phone+"\n\n\n\n";
+                document.getElementById("res").innerHTML = string;
                 flag = 1;
           }
     });
